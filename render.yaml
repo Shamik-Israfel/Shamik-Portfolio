@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: shamik-mondal-portfolio
+    runtime: node
+    region: singapore
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 20.20.2
+    healthCheckPath: /
+    autoDeploy: true
